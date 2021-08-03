@@ -1,0 +1,25 @@
+<ezstream>
+
+  <servers>
+    <server>
+      <hostname>yourDockerHostIPAddress</hostname>
+      <password>yourSourcePasswordHere</password>
+    </server>
+  </servers>
+
+  <streams>
+    <stream>
+      <mountpoint>/noaa</mountpoint>
+      <format>MP3</format>
+      <stream_name>NOAA</stream_name>
+    </stream>
+  </streams>
+
+  <intakes>
+    <intake>
+      <type>stdin</type>
+      <stream_once>Yes</stream_once>
+    </intake>
+  </intakes>
+
+</ezstream>

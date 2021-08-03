@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  icecast:
+    image: moul/icecast
+    container_name: icecast
+    restart: always
+    network_mode: host
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ${PWD}/icecast.xml:/etc/icecast2/icecast.xml
+    ports:
+      - 8000:8000
+  radio_noaa:
+    build: .
+    container_name: radio_noaa
+    depends_on: 
+      - icecast
+    restart: always
+    privileged: true
+    network_mode: host
